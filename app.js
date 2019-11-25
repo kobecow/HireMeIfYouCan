@@ -64,6 +64,7 @@ app.post('/webhook', (req, res) => {
 
     // Iterate over each messaging event
     entry.messaging.forEach((messagingEvent) =>{
+        console.log(messagingEvent)
         if (messagingEvent.message) {
             receivedMessage(messagingEvent);
         } else if (messagingEvent.postback) {
