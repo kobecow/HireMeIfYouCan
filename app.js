@@ -31,6 +31,13 @@ const
   body_parser = require('body-parser'),
   app = express().use(body_parser.json()); // creates express http server
 
+import { receivedMessage } from 'functions/receivedMessage';
+import { receivedPostback } from 'functions/receivedPostback';
+import { sendQuickReply } from 'functions/sendQuickReply';
+import { sendTextMessage } from 'functions/sendTextMessage';
+import { callSendAPI } from 'functions/callSendAPI';
+import { sendToLearn } from 'functions/sendToLearn';
+
 // Sets server port and logs message on success
 app.listen(process.env.PORT || 80, () => console.log('webhook is listening'));
 
@@ -42,34 +49,34 @@ app.get('/health', (req, res) => {
 
 // Accepts POST requests at /webhook endpoint
 app.post('/webhook', (req, res) => {
-  console.log("HELLO");
+  
   // console.dir(req);
   // Parse the request body from the POST
   let body = req.body;
+  console.dir(body);
 
   // Check the webhook event is from a Page subscription
   if (body.object === 'page') {
 
     body.entry.forEach(function(entry) {
+      
+    //   let pageID = pageEntry.id;
+    //   let timeOfEvent = pageEntry.time;
 
-      // Gets the body of the webhook event
-      let webhook_event = entry.messaging[0];
-      console.log('webhook_event is');
-      console.log(webhook_event);
+    // Iterate over each messaging event
+    entry.messaging.forEach((messagingEvent) =>{
+        if (messagingEvent.message) {
+            receivedMessage(messagingEvent);
+        } else if (messagingEvent.postback) {
+            receivedPostback(messagingEvent);
+        } else {
+            console.log("Webhook received unknown messagingEvent: ", messagingEvent);
+            // TODO
+            // Write Error event insert into DB
+        }
+    })
 
 
-      // Get the sender PSID
-      let sender_psid = webhook_event.sender.id;
-      // console.log('Sender ID: ' + sender_psid);
-
-      // Check if the event is a message or postback and
-      // pass the event to the appropriate handler function
-      if (webhook_event.message) {
-        handleMessage(sender_psid, webhook_event.message);
-      } else if (webhook_event.postback) {
-
-        handlePostback(sender_psid, webhook_event.postback);
-      }
 
     });
     // Return a '200 OK' response to all events
