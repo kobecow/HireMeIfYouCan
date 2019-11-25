@@ -1,4 +1,5 @@
 const request = require('request');
+const PAGE_ACCESS_TOKEN = require('../config');
 
 module.exports = function (){
   this.callSendAPI = (messageData) =>{
