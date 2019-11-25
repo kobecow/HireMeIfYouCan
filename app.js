@@ -31,10 +31,8 @@ const
   body_parser = require('body-parser'),
   app = express().use(body_parser.json()); // creates express http server
   
-const receivedMessage = require('./functions/receivedMessage');
-const receivedPostback = require('./functions/receivedPostback');
-const sendQuickReply = require('./functions/sendQuickReply');
-const sendTextMessage = require('./functions/sendTextMessage');
+require('./functions/receivedMessage.js');
+require('./functions/receivedPostback.js');
 
 
 // Sets server port and logs message on success
