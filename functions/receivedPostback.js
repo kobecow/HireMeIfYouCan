@@ -1,7 +1,7 @@
 const sendQuickReply = './sendQuickReply';
 
 
-export function receivedPostback(event) {
+module.exports.receivedPostback = (event) =>{
     const senderID = event.sender.id;
     const recipientID = event.recipient.id;
     const timeOfPostback = event.timestamp;

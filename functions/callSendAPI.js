@@ -1,4 +1,4 @@
-export function callSendAPI(messageData) {
+module.exports.callSendAPI = (messageData) =>{
     request({
       uri: 'https://graph.facebook.com/v5.0/me/messages',
       qs: { access_token: PAGE_ACCESS_TOKEN },

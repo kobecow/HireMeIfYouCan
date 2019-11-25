@@ -1,6 +1,6 @@
 const callSendAPI = './callSendAPI';
 
-export function sendQuickReply(recipientId, recivedMessage) {
+module.exports.sendQuickReply = (recipientId, recivedMessage) =>{
     let messageData = {
         recipient: {
             id: recipientId
