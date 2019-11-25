@@ -1,3 +1,6 @@
+const sendQuickReply = require('./sendQuickReply');
+const sendToLearn = require('./sendToLearn');
+
 export function receivedMessage(event) {
     const senderID = event.sender.id;
     const recipientID = event.recipient.id;

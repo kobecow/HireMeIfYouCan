@@ -1,4 +1,4 @@
-import { sendQuickReply } from 'sendQuickReply';
+const sendQuickReply = './sendQuickReply';
 
 
 export function receivedPostback(event) {

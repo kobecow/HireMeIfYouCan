@@ -1,4 +1,4 @@
-import { callSendAPI } from 'callSendAPI';
+const callSendAPI = './callSendAPI';
 
 export function sendQuickReply(recipientId, recivedMessage) {
     let messageData = {
@@ -42,6 +42,7 @@ export function sendQuickReply(recipientId, recivedMessage) {
 
         default:
             console.log("AAA");
+            return
 
     }
     
