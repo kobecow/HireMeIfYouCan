@@ -20,7 +20,7 @@
  *
  */
 
-'use strict';
+
 const PAGE_ACCESS_TOKEN = require('./config');
 //const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 console.log('fire')
@@ -31,8 +31,8 @@ const
   body_parser = require('body-parser'),
   app = express().use(body_parser.json()); // creates express http server
   
-require('./functions/receivedMessage.js');
-require('./functions/receivedPostback.js');
+require('./functions/receivedMessage.js')();
+require('./functions/receivedPostback.js')();
 
 
 // Sets server port and logs message on success

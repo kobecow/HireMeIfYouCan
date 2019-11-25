@@ -1,4 +1,4 @@
-require('./callSendAPI');
+require('./callSendAPI')();
 
 module.exports = function (){
     this.sendQuickReply = (recipientId, recivedMessage) =>{

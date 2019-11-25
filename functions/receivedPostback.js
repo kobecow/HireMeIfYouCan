@@ -1,4 +1,4 @@
-require('./sendQuickReply');
+require('./sendQuickReply')();
 
 module.exports = function (){
   this.receivedPostback = (event) =>{

@@ -1,7 +1,7 @@
-const sendQuickReply = require('./sendQuickReply');
-const sendToLearn = require('./sendToLearn');
-
-module.exports.receivedMessage = (event) =>{
+require('./sendQuickReply')();
+require('./sendToLearn')();
+module.exports = function (){
+  receivedMessage = (event) =>{
     const senderID = event.sender.id;
     const recipientID = event.recipient.id;
     const timeOfMessage = event.timestamp;
@@ -47,4 +47,5 @@ module.exports.receivedMessage = (event) =>{
       }
 
       
+  }
 }
