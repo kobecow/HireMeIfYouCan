@@ -30,13 +30,13 @@ const
   express = require('express'),
   body_parser = require('body-parser'),
   app = express().use(body_parser.json()); // creates express http server
-
-import { receivedMessage } from 'functions/receivedMessage';
-import { receivedPostback } from 'functions/receivedPostback';
-import { sendQuickReply } from 'functions/sendQuickReply';
-import { sendTextMessage } from 'functions/sendTextMessage';
-import { callSendAPI } from 'functions/callSendAPI';
-import { sendToLearn } from 'functions/sendToLearn';
+  
+const receivedMessage = require('functions/receivedMessage.js');
+const receivedPostback = require('functions/receivedPostback');
+const sendQuickReply = require('functions/sendQuickReply');
+const sendTextMessage = require('functions/sendTextMessage');
+const callSendAPI = require('functions/callSendAPI');
+const sendToLearn = require('functions/sendToLearn');
 
 // Sets server port and logs message on success
 app.listen(process.env.PORT || 80, () => console.log('webhook is listening'));
