@@ -1,7 +1,7 @@
-const sendQuickReply = './sendQuickReply';
+require('./sendQuickReply')();
 
-
-module.exports.receivedPostback = (event) =>{
+module.exports = function (){
+  this.receivedPostback = (event) =>{
     const senderID = event.sender.id;
     const recipientID = event.recipient.id;
     const timeOfPostback = event.timestamp;
@@ -15,3 +15,6 @@ module.exports.receivedPostback = (event) =>{
       
     sendQuickReply(senderID, payload)
   }
+}
+  
+

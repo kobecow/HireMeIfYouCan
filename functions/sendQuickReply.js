@@ -1,6 +1,7 @@
-const callSendAPI = './callSendAPI';
+require('./callSendAPI')();
 
-module.exports.sendQuickReply = (recipientId, recivedMessage) =>{
+module.exports = function (){
+    this.sendQuickReply = (recipientId, recivedMessage) =>{
     let messageData = {
         recipient: {
             id: recipientId
@@ -43,9 +44,9 @@ module.exports.sendQuickReply = (recipientId, recivedMessage) =>{
         default:
             console.log("AAA");
             return
-
-    }
+        }
     
   
     callSendAPI(messageData);
-  }
+  };
+}
