@@ -42,8 +42,8 @@ module.exports = function (){
             ];
             break;
         case 'experiences':
-            messageData.message.text = "Okay, Let me tell you my experience.\nIn Automobile industry, I Built and Managed systems on AWS for more than 2 years\n"+
-            "My role was developing monitoring tool, bash script, solving incidents/problems and developing web applicaiton with Node.js\n"+
+            messageData.message.text = "Okay, Let me tell you my experience.\nIn Automobile industry, I built and managed significant customer faced systems on AWS for more than 2 years.\n"+
+            "My role was developing monitoring tool, bash script, solving incidents and problems and developing web applicaiton with Node.js\n"+
             "So I have proficient skills of Node.js and System Building by AWS.\n"+
             "If you require any further information, Please look at my LinkedIn Profile https://www.linkedin.com/in/seiji-nishi/ \n\n"+
             "What do you want to know about me?";
@@ -79,7 +79,7 @@ module.exports = function (){
 
         case 'portfolios':
             messageData.message.text = "I like to tell you my Portfolio. This Chatbot is one of them. I used free domain and certification to use https. \n"+
-            "And I built heatmap of several gases based on satellite data. This web app got an award of Space Apps 2019. https://gasmap.hiremeifyoucan.tk/ \n"+
+            "And I built heatmap of several gases based on satellite data. This web app got an award of Space Apps 2019. This is run for only laptop not mobile now. https://gasmap.hiremeifyoucan.tk/ \n"+
             "Also, I'm building Learning English Application(named TanGo) with ReactNative. It is consisted of Chrome Extension and Web and Mobile Native for Android https://github.com/kobecow/TanGo \n"+
             "I'm learning a lot of things from my those side project. And I love it. Please Check my GitHub repository https://github.com/kobecow"+
             "\n\n"+
@@ -154,8 +154,8 @@ module.exports = function (){
             case 'skills':   
                 messageData.message.text = "Language: JavaScript, Python, Bash, SQL, Java\n"+
                 "Development with Git, Ansible, Terraform\n"+
-                "System Components: Node.js, Docker, MySQL, Oracle, Kubernetes, DynamoDB"+
-                "Other: AWS"+
+                "System Components: Node.js, Docker, MySQL, Oracle, Kubernetes, DynamoDB\n"+
+                "Other: Linux, AWS"+
                 "\n\n"+
                 "What do you want to know about me?";;;
     
@@ -221,14 +221,7 @@ module.exports = function (){
                         "payload":"Other"
                     }
                 ];
-
-
-
-
-                
-
-
-
+                break;
         default:
             console.log("AAA");
             return
