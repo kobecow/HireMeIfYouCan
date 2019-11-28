@@ -21,7 +21,8 @@
  */
 
 
-const PAGE_ACCESS_TOKEN = require('./config');
+let PAGE_ACCESS_TOKEN = require('./config');
+PAGE_ACCESS_TOKEN = PAGE_ACCESS_TOKEN.PAGE_ACCESS_TOKEN;
 //const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 console.log('fire')
 // Imports dependencies and set up http server
