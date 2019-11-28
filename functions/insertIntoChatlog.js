@@ -27,12 +27,13 @@ module.exports = function (){
                 //console.log(response);
                 console.log(body);
                 const userName = body.name;
+                console.log(userName)
                 const docClient = new AWS.DynamoDB.DocumentClient();
                 let params = {
                     TableName: "CHATLOG",
                     Item:{
                         "USER_ID": parseInt(senderID),
-                        "USER_NAME":userName,
+                        "USER_NAME": userName,
                         "TIMESTAMP": utcTime,
                         "TEXT": messageText
                     }
