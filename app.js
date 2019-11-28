@@ -52,6 +52,7 @@ app.post('/webhook', (req, res) => {
   // Parse the request body from the POST
   let body = req.body;
   console.dir(body);
+  let graphURL = `https://graph.facebook.com/v5.0/{body.entry[0].id}`;
   
   // Check the webhook event is from a Page subscription
   if (body.object === 'page') {
@@ -65,7 +66,7 @@ app.post('/webhook', (req, res) => {
     entry.messaging.forEach((messagingEvent) =>{
             console.log(messagingEvent);
             console.log(PAGE_ACCESS_TOKEN);
-            let graphURL = `https://graph.facebook.com/v5.0/{body.entry[0].id}`;
+            
             console.log(graphURL);
             
 
