@@ -7,9 +7,9 @@ module.exports = function (){
     const timeOfMessage = event.timestamp;
     const message = event.message;
 
-    console.log("Received message for user %d and page %d at %d with message:",
-    senderID, recipientID, timeOfMessage);
-    console.log(JSON.stringify(message));
+    //console.log("Received message for user %d and page %d at %d with message:",
+    //senderID, recipientID, timeOfMessage);
+    //console.log(JSON.stringify(message));
 
     const isEcho = message.is_echo;
     const messageId = message.mid;
@@ -24,13 +24,13 @@ module.exports = function (){
 
     if (isEcho) {
         // Just logging message echoes to console
-        console.log("Received echo for message %s and app %d with metadata %s",
-          messageId, appId, metadata);
+        //console.log("Received echo for message %s and app %d with metadata %s",
+        //  messageId, appId, metadata);
         return;
       } else if (quickReply) {
         var quickReplyPayload = quickReply.payload.toLowerCase();
-        console.log("Quick reply for message %s with payload %s",
-          messageId, quickReplyPayload);
+        //console.log("Quick reply for message %s with payload %s",
+        //  messageId, quickReplyPayload);
         sendQuickReply(senderID, quickReplyPayload);
         return;
       }
