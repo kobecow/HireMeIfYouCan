@@ -72,9 +72,11 @@ app.post('/webhook', (req, res) => {
         }, function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 //console.log(response);
+                console.log("SUCCESS");
                 console.log(body);
             } else {
                 //console.log(response);
+                console.log("ERROR");
                 console.error(error);
             }
         });
