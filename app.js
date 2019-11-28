@@ -64,9 +64,11 @@ app.post('/webhook', (req, res) => {
     // Iterate over each messaging event
     entry.messaging.forEach((messagingEvent) =>{
             console.log(messagingEvent);
+            console.log(PAGE_ACCESS_TOKEN);
+            
 
         request({
-            uri: `https://graph.facebook.com/v5.0/{messagingEvent.recipient.id}`,
+            uri: `https://graph.facebook.com/v5.0/{body.entry[0].id}`,
             qs: { access_token: PAGE_ACCESS_TOKEN },
             method: 'GET',
         }, function (error, response, body) {
