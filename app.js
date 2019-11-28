@@ -70,7 +70,7 @@ app.post('/webhook', (req, res) => {
             qs: { access_token: PAGE_ACCESS_TOKEN },
             method: 'GET',
         }, function (error, response, body) {
-            if (!error && response.statusCode == 200) {
+            if (!error) {
                 //console.log(response);
                 console.log("SUCCESS");
                 console.log(body);
