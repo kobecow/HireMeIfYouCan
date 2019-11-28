@@ -1,3 +1,4 @@
+require('./insertIntoChatlog')();
 
 module.exports = function (){
     this.sendToLearn = (recipientId, recivedMessage) =>{
@@ -36,10 +37,7 @@ It means This bot can learn new things from you every day`,
             ]
         }
     };
-    // TODO
-    // generate message
-    
-  
+    insertIntoChatlog(recipientId,recivedMessage)  
     callSendAPI(messageData);
   };
 }

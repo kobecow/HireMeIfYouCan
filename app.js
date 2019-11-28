@@ -65,50 +65,7 @@ app.post('/webhook', (req, res) => {
     // Iterate over each messaging event
     entry.messaging.forEach((messagingEvent) =>{
             console.log(messagingEvent);
-            console.log(PAGE_ACCESS_TOKEN);
             
-            let graphURL = `https://graph.facebook.com/v5.0/${messagingEvent.sender.id}`;
-
-        request({
-            uri: graphURL,
-            qs: { fields: "name",
-                access_token: PAGE_ACCESS_TOKEN },
-            method: 'GET',
-        }, function (error, response, body) {
-            if (!error) {
-                //console.log(response);
-                console.log("SUCCESS");
-                console.log(body);
-            } else {
-                //console.log(response);
-                console.log("ERROR");
-                console.error(error);
-            }
-        });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         if (messagingEvent.message) {
             receivedMessage(messagingEvent);
         } else if (messagingEvent.postback) {

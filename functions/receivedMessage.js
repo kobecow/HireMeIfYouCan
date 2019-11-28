@@ -31,9 +31,7 @@ module.exports = function (){
         var quickReplyPayload = quickReply.payload.toLowerCase();
         console.log("Quick reply for message %s with payload %s",
           messageId, quickReplyPayload);
-        sendQuickReply(senderID, quickReplyPayload)
-        // TODO
-        // insert message event into DB
+        sendQuickReply(senderID, quickReplyPayload);
         return;
       }
 
