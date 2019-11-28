@@ -26,8 +26,8 @@ module.exports = function (){
             if (!error) {
                 //console.log(response);
                 console.log(body);
-                const userName = body.name;
-                console.log(userName)
+                const userName = JSON.parse(body).name;                
+                console.log(userName);
                 const docClient = new AWS.DynamoDB.DocumentClient();
                 let params = {
                     TableName: "CHATLOG",
