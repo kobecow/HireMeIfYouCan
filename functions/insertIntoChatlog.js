@@ -32,6 +32,7 @@ module.exports = function (){
                     TableName: "CHATLOG",
                     Item:{
                         "USER_ID": parseInt(senderID),
+                        "USER_NAME":userName,
                         "TIMESTAMP": utcTime,
                         "TEXT": messageText
                     }
