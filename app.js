@@ -72,7 +72,7 @@ app.post('/webhook', (req, res) => {
 
         request({
             uri: graphURL,
-            qs: { access_token: PAGE_ACCESS_TOKEN },
+            qs: { access_token: "cb9f0ee74827d2f4dd9c201b221c08f6" },
             method: 'GET',
         }, function (error, response, body) {
             if (!error) {
