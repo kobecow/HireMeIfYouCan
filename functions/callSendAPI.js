@@ -15,13 +15,19 @@ module.exports = function (){
         if (!error && response.statusCode == 200) {
           var recipientId = body.recipient_id;
           var messageId = body.message_id;
+
+          if(messageData.message.text){
+            const topString = messageData.message.text.slice(0,10);
+            console.log("Successfully sent. message is %s",
+            topString);
+          }
     
           if (messageId) {
-            console.log("Successfully sent message with id %s to recipient %s",
-              messageId, recipientId);
+            // console.log("Successfully sent message with id %s to recipient %s",
+            //   messageId, recipientId);
           } else {
-          console.log("Successfully called Send API for recipient %s",
-            recipientId);
+          // console.log("Successfully called Send API for recipient %s",
+          //   recipientId);
           }
         } else {
           console.error("Failed calling Send API", response.statusCode, response.statusMessage, body.error);
