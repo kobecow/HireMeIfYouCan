@@ -78,7 +78,7 @@ module.exports = function (){
             break;
 
         case 'portfolios':
-            messageData.message.text = "I like to tell you my Portfolio. This Chatbot is one of them. I used free domain and certification to use https. \n"+
+            messageData.message.text = "I'd like to tell you my Portfolio. This Chatbot is one of them. I used free domain and certification to use https. \n"+
             "And I built heatmap of several gases based on satellite data. This web app got an award of Space Apps 2019. This is run for only laptop not mobile now. https://gasmap.hiremeifyoucan.tk/ \n"+
             "Also, I'm building Learning English Application(named TanGo) with ReactNative. It is consisted of Chrome Extension and Web and Mobile Native for Android https://github.com/kobecow/TanGo \n"+
             "I'm learning a lot of things from my those side project. And I love it. Please Check my GitHub repository https://github.com/kobecow"+
