@@ -115,11 +115,12 @@ module.exports = function (){
             break;
 
         case 'general info':
+                console.log('Got general info');
                 messageData.message.text = "My Name is Seiji Nishi. Japanese Guy. 27years old.\n"+
                 "Address is Waterloo, ON.\n"+
                 "Email is sneeiwji@gmail.com"+
                 "\n\n"+
-                "What do you want to know about me?";;;
+                "What do you want to know about me?";
 
                 messageData.message.quick_replies = [
                     {
